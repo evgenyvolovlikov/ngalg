@@ -103,6 +103,23 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular-vite:start-storybook",
+          "options": {
+            "configDir": "storybook",
+            "browserTarget": "ngalg:build",
+            "port": 6006
+          }
+
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular-vite:build-storybook",
+          "options": {
+            "configDir": "storybook",
+            "browserTarget": "ngalg:build",
+            "outputDir": "storybook-static"
+          }
         }
       }
     }
