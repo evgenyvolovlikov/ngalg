@@ -3,9 +3,19 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+// --- БАЗОВЫЙ ПЛАЦЕХОЛДЕР ДЛЯ КОНТЕЙНЕРА ---
+%container-base {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--unit-4);
+  padding-left: var(--unit-4);
 }
 
 :root {
@@ -29,7 +39,6 @@
     'Geist Sans', system-ui, -apple-system, blinkmacsystemfont,
     sans-serif;
   --font-mono: 'Geist Mono', monaco, consolas, monospace;
-
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -76,17 +85,17 @@
   --color-btn-text: #0a0a0a;
 }
 
-/* --- ТЁМНАЯ ТЕМА (переопределяем те же переменные) --- */
+/* --- ТЁМНАЯ ТЕМА --- */
 body.theme-dark {
   --color-bg: #0f0f0f;
   --color-bg-panel: #1a1a1a;
   --color-bg-surface: #252525;
   --color-text-main: #f0f0f0;
-  --color-text-muted: #aaaaaa;
-  --color-text-disabled: #555555;
-  --color-border: #333333;
+  --color-text-muted: #aaa;
+  --color-text-disabled: #555;
+  --color-border: #333;
   --color-input-bg: #1e1e1e;
-  --color-btn-bg: #cccccc;
+  --color-btn-bg: #ccc;
   --color-btn-text: #0f0f0f;
   --color-card-bg: #1a1a1a;
 }
@@ -101,10 +110,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  line-height: 1.5;
   background-color: var(--color-bg);
-  color: var(--color-text-main);
   font-family: var(--font-sans);
+  line-height: 1.5;
+  color: var(--color-text-main);
   transition:
     background-color var(--transition-duration-main)
       var(--transition-easing-ide),
@@ -121,32 +130,28 @@ app-root {
   flex-direction: column;
 }
 
-/* --- ГЛОБАЛЬНЫЙ КОНТЕЙНЕР  --- */
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--unit-4);
-  padding-right: var(--unit-4);
+  @extend %container-base;
 }
 
 .container-centered {
-  @extend .container;
+  @extend %container-base;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .container-narrow {
-  @extend .container;
+  @extend %container-base;
+
   max-width: 640px;
 }
 
 .container-full {
   width: 100%;
-  padding-left: var(--unit-4);
   padding-right: var(--unit-4);
+  padding-left: var(--unit-4);
 }
 
 img,
@@ -170,24 +175,24 @@ li {
 input,
 textarea,
 select {
+  width: 100%;
+  padding: var(--unit-3) var(--unit-4);
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border);
-  color: var(--color-text-main);
-  padding: var(--unit-3) var(--unit-4);
   border-radius: var(--unit-2);
-  width: 100%;
-  font: inherit;
-  outline: none;
+  color: var(--color-text-main);
   transition:
     border-color 0.2s,
     background 0.2s;
+  font: inherit;
+  outline: none;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
+  box-shadow: 0 0 0 2px rgb(0 86 179 / 20%);
   border-color: var(--color-info);
-  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
 }
 
 input:disabled,
@@ -198,16 +203,16 @@ select:disabled {
 }
 
 button {
-  background: var(--color-btn-bg);
-  color: var(--color-btn-text);
-  border: none;
   padding: var(--unit-3) var(--unit-4);
+  background: var(--color-btn-bg);
+  border: none;
   border-radius: var(--unit-2);
-  font: inherit;
-  cursor: pointer;
+  color: var(--color-btn-text);
   transition:
     opacity 0.2s,
     transform 0.1s;
+  cursor: pointer;
+  font: inherit;
 }
 
 button:hover {
@@ -226,20 +231,19 @@ button:disabled {
 /* --- СТИЛИ ДЛЯ ССЫЛОК КАК КНОПОК --- */
 a.btn-like {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  background: var(--color-btn-bg);
-  color: var(--color-btn-text);
-  border: none;
+  align-items: center;
   padding: var(--unit-3) var(--unit-4);
+  background: var(--color-btn-bg);
+  border: none;
   border-radius: var(--unit-2);
-  font: inherit;
   font-weight: var(--font-weight-medium);
-  text-decoration: none;
-  cursor: pointer;
+  color: var(--color-btn-text);
   transition:
     opacity 0.2s,
     transform 0.1s;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 a.btn-like:hover {

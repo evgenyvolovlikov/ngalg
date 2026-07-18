@@ -1,18 +1,52 @@
-# --- Node.js / pnpm ---
+# --- Результаты сборки и компиляции ---
+/dist/
+/build/
+/out-tsc/
+
+# --- Зависимости (Packages) ---
 node_modules/
-pnpm-lock.yaml
+.pnpm-store/
 
-# --- Build / dist ---
-dist/
-build/
-
-# --- IDE ---
-.vscode/
-
-# --- OS ---
-.DS_Store
-
-# --- Logs / temp ---
+# --- Кэш и логи разработки ---
+.angular/
 *.log
+*.log*
+pnpm-debug.log*
+
+# --- Настройки IDE и редакторов ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/snippets/
+.idea/
+*.suo
+*.ntvsca*
+
+# --- Системные файлы операционных систем ---
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Переменные окружения и секреты (Environment) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# --- Кэш тестов и отчеты ---
+/coverage/
+.nyc_output/
+.karma/
+.cypress/
+
+# --- Временные файлы (Temporary) ---
+tmp/
+*.tmp
+*.bak
 
 diary.md
