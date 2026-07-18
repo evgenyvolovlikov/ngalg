@@ -1,0 +1,7 @@
+{
+  "src/**/*.{scss,css}": [
+    "stylelint --fix",
+    "prettier --write"
+  ],
+  "src/**/*.json": ["prettier --write"]
+}

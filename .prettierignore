@@ -1,0 +1,20 @@
+# --- Сборка, компиляция и зависимости ---
+node_modules/
+dist/
+build/
+out-tsc/
+.angular/
+
+# --- Инфраструктура, секреты и IDE ---
+.vscode/
+.DS_Store
+*.log
+.env
+.env.*
+
+# --- Автогенерация и Локфайлы (Их форматировать запрещено) ---
+pnpm-lock.json
+
+# --- Медиа и Статика (Ускоряем работу Prettier) ---
+public/**/*.svg
+public/**/*.ico
