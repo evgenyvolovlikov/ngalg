@@ -19,26 +19,44 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "^22.1.0",
     "@angular/build": "^22.0.7",
     "@angular/cli": "^22.0.7",
     "@angular/compiler-cli": "^22.0.7",
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@commitlint/types": "^21.2.0",
+    "@eslint/js": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "angular-eslint": "^22.1.0",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-boundaries": "^7.0.2",
     "husky": "^9.1.7",
+    "jiti": "^2.7.0",
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.5",
     "stylelint": "^17.14.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-order": "^8.1.1",
-    "typescript": "~6.0.2"
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.64.0"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng buid --watch --configuration development",
+    "lint": "ng lint",
+    "start:dev": "pnpm ng serve",
+    "build:dev": "pnpm ng build --configuration development",
+    "watch:build:dev": "pnpm ng build --watch --configuration development",
+    "start:prod": "pnpm ng serve --configuration production",
+    "build:prod": "pnpm ng build --configuration production",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,css,json}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,html,scss,css,json}\"",
+    "lint:check": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "lint:styles": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:styles:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "validate": "pnpm lint:check && pnpm lint:styles && pnpm format:check",
     "prepare": "husky"
   }
 }
