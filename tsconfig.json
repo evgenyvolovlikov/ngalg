@@ -1,0 +1,73 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noErrorTruncation": true,
+    "allowArbitraryExtensions": true,
+
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+
+    "lib": ["esnext", "dom"],
+
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "useUnknownInCatchVariables": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@features/*": ["./src/features/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@shared/*": ["./src/shared/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "strictInputTypes": true,
+    "strictStandalone": true,
+    "strictAttributeTypes": true,
+    "strictOutputEventTypes": true,
+    "strictDomEventTypes": true,
+    "strictContextGenerics": true,
+    "extendedDiagnostics": {
+      "defaultCategory": "error",
+      "checks": {
+        "missingControlFlowDirective": "error",
+        "nullishCoalescingNotNullable": "warning",
+        "optionalChainNotNullable": "warning",
+        "interpolatedSignalNotInvoked": "error",
+        "unusedStandaloneImports": "error"
+      }
+    }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
