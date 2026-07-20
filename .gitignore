@@ -50,7 +50,10 @@ tmp/
 *.bak
 
 diary.md
+/dsa
 
 # --- Компонентная база Stprybook ---
 *storybook.log
 storybook-static
+
+#

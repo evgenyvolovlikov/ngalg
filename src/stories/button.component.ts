@@ -13,7 +13,7 @@ import {
   template: `
     <button
       type="button"
-      (click)="onClick.emit($event)"
+      (click)="handleClick.emit($event)"
       [ngClass]="classes"
       [ngStyle]="{ 'background-color': backgroundColor }"
     >

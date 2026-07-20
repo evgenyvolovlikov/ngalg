@@ -1,3 +1,17 @@
 import { Routes } from '@angular/router'
 
-export const routes: Routes = []
+import { CoursePageComponent } from '@pages/course-page'
+
+import { appRoutes } from '@shared/config/routes.config'
+
+export const routes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: appRoutes.course,
+        component: CoursePageComponent
+      }
+    ]
+  }
+]

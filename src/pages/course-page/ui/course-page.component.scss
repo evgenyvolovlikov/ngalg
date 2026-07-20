@@ -1,0 +1,8 @@
+.course-page {
+  display: flex;
+
+  &__sidebar {
+    width: 280px;
+    flex-shrink: 0;
+  }
+}
