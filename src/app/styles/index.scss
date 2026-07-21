@@ -11,11 +11,9 @@
 // --- БАЗОВЫЙ ПЛАЦЕХОЛДЕР ДЛЯ КОНТЕЙНЕРА ---
 %container-base {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1280px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--unit-4);
-  padding-left: var(--unit-4);
 }
 
 :root {
@@ -30,6 +28,7 @@
 
   /* --- СЕМАНТИЧЕСКИЕ ТОКЕНЫ --- */
   --color-success: #12a150;
+  --color-success-light: #d1fae5;
   --color-error: #e00d54;
   --color-warning: #c4841d;
   --color-info: #0056b3;
@@ -44,17 +43,23 @@
   --font-weight-bold: 700;
 
   /* --- ШКАЛА ОТСТУПОВ --- */
+  --unit-05: 0.125rem; /* 4px */
   --unit-1: 0.25rem; /* 4px */
   --unit-2: 0.5rem; /* 8px */
   --unit-3: 0.75rem; /* 12px */
   --unit-4: 1rem; /* 16px */
   --unit-5: 1.25rem; /* 20px */
   --unit-6: 1.5rem; /* 24px */
+  --unit-7: 1.75rem; /* 28px */
   --unit-8: 2rem; /* 32px */
   --unit-10: 2.5rem; /* 40px */
   --unit-12: 3rem; /* 48px */
   --unit-16: 4rem; /* 64px */
   --unit-20: 5rem; /* 80px */
+
+  /* Компоненты */
+  --sidebar-width: 17rem;
+  --header-height: var(--unit-16);
 
   /* РАЗМЕР ШРИФТА */
   --font-size-xs: 0.813rem;
@@ -268,10 +273,10 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: var(--unit-4); /* базовый отступ снизу */
+  margin-bottom: var(--unit-4);
   font-family: var(--font-sans);
   font-weight: var(--font-weight-bold);
-  line-height: 1.2; /* плотнее для заголовков */
+  line-height: 1.2;
   color: var(--color-text-main);
 }
 
@@ -284,7 +289,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1875rem; /* ~19px */
+  font-size: 1.1875rem;
 }
 
 h4 {

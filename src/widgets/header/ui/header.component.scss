@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+  gap: var(--unit-6);
+
+  &__list {
+    display: flex;
+    gap: var(--unit-4);
+  }
+}

@@ -1,15 +1,26 @@
 import { Component } from '@angular/core'
+import { RouterOutlet } from '@angular/router'
 
 import { CourseSidebarComponent } from '@widgets/course-sidebar'
 
+import { SidebarLayout } from '@shared/ui/sidebar-layout/sidebar-layout.component'
+
 @Component({
   selector: 'app-course-page',
-  imports: [CourseSidebarComponent],
+  imports: [
+    CourseSidebarComponent,
+    SidebarLayout,
+    RouterOutlet
+  ],
   template: `
-    <div class="course-page">
-      <app-course-sidebar class="course-page__sidebar" />
-      <main class="course-page__main">Right</main>
-    </div>
+    <app-sidebar-layout>
+      <app-course-sidebar slot-sidebar></app-course-sidebar>
+
+      <main>
+        Content:
+        <router-outlet />
+      </main>
+    </app-sidebar-layout>
   `,
   styleUrl: './course-page.component.scss'
 })

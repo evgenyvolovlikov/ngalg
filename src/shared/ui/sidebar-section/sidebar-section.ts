@@ -4,7 +4,9 @@ import { Component, input } from '@angular/core'
   selector: 'app-sidebar-section',
   template: `
     <section class="sidebar-section">
-      <h3 class="sidebar-section__title">{{ title() }}</h3>
+      @if (!hideTitle() && title()) {
+        <h3 class="sidebar-section__title">{{ title() }}</h3>
+      }
       <div class="sidebar-section__content">
         <ng-content />
       </div>
@@ -13,4 +15,5 @@ import { Component, input } from '@angular/core'
 })
 export class SidebarSection {
   public title = input<string | null>(null)
+  public hideTitle = input<boolean>(false)
 }

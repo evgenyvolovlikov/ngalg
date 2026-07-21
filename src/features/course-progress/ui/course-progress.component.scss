@@ -1,0 +1,45 @@
+.course-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--unit-3);
+
+  &__ring-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__circle-bg {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+
+  &__value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    font-size: var(--unit-7);
+    font-weight: var(--font-weight-bold);
+    transform: translate(-50%, -50%);
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: var(--unit-4);
+
+    &--count {
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}

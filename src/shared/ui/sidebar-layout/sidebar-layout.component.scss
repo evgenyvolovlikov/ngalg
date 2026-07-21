@@ -1,0 +1,21 @@
+.layout-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  border: 1px solid var(--color-border);
+}
+
+.layout__sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  padding: var(--unit-4);
+  border-right: 1px solid var(--color-border);
+  gap: var(--unit-4);
+}
+
+.layout__content {
+  padding: var(--unit-4);
+  flex-grow: 1;
+  overflow-y: auto;
+}

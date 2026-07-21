@@ -1,0 +1,33 @@
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--unit-1) 0;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.lock-icon {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: var(--unit-5);
+}
+
+.status {
+  margin-left: var(--unit-3);
+  padding: var(--unit-05) var(--unit-2);
+  background-color: var(--color-success-light);
+  border-radius: 999px;
+  font-size: var(--unit-3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-success);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
